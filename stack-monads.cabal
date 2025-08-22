@@ -1,0 +1,36 @@
+cabal-version: 3.8
+name: stack-monads
+version: 0.1.0.0
+license: MIT
+author: fendor
+maintainer: fendor@posteo.de
+build-type: Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+  ghc-options: -Wall
+
+library
+  import: warnings
+  exposed-modules:
+    Reader
+    Stack
+
+  build-depends:
+    base,
+    ghc,
+    ghc-experimental,
+    ghc-internal,
+
+  hs-source-dirs: src
+  default-language: GHC2021
+
+executable stack-monads
+  import: warnings
+  main-is: Main.hs
+  build-depends:
+    base,
+    stack-monads,
+
+  hs-source-dirs: app
+  default-language: GHC2021
